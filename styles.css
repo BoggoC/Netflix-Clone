@@ -1,0 +1,926 @@
+:root {
+  --primary-color: #e50914;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #000;
+  color: #999;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #fff;
+}
+
+.hero-title h1 {
+  font-size: 50px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 19.2px;
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+.hero {
+  width: 100%;
+  /* height: 85vh; */
+  height: 100%;
+  position: relative;
+  background: url("./img/DE-en-20220418-popsignuptwoweeks-perspective_alpha_website_large.jpeg")
+    no-repeat center center/cover;
+  border-bottom: 8px solid #222222;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 100px 250px #000000, inset 0px -100px 250px #000000;
+}
+
+/* header */
+.header {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px) {
+  .header {
+    height: 4rem;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px),
+  only screen and (min-width: 400px) and (max-width: 549px),
+  only screen and (min-width: 350px) and (max-width: 399px),
+  only screen and (max-width: 349px) {
+  .header {
+    height: 45px;
+  }
+}
+
+.header-top {
+  position: relative;
+  margin: 0 3.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+  height: auto;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px) {
+  .header-top {
+    margin: 0 45px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 549px),
+  only screen and (min-width: 350px) and (max-width: 399px),
+  only screen and (max-width: 349px) {
+  .header-top {
+    margin: 0 5%;
+  }
+}
+
+.header-top .svg-nfLogo {
+  margin-right: auto;
+  line-height: normal;
+}
+
+.svg-icon-netflix-logo {
+  fill: #e50914;
+}
+
+.header-top .nfLogo .svg-icon-netflix-logo {
+  width: auto;
+  height: 1.5rem;
+  padding-top: 0;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px) {
+  .header-top .nfLogo .svg-icon-netflix-logo {
+    width: 6.75rem;
+    height: 2rem;
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px) {
+  .header-top .nfLogo .svg-icon-netflix-logo {
+    width: 8.375rem;
+    height: 2.25rem;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .header-top .nfLogo .svg-icon-netflix-logo {
+    width: 10.4375rem;
+    height: 2.8125rem;
+  }
+}
+
+.header-top .nfLogo .svg-icon-netflix-logo {
+  padding-top: 0;
+}
+
+.header-top .dropdown {
+  display: inline-block;
+  margin: 0 0.75rem;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px) {
+  .header-top .dropdown {
+    margin-right: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px),
+  only screen and (min-width: 1450px) {
+  .header-top .dropdown {
+    margin-right: 2rem;
+  }
+}
+
+.dropbtn {
+  color: #fff;
+  background-color: rgba(000, 0, 0, 0);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px),
+  only screen and (min-width: 950px) and (max-width: 1449px),
+  only screen and (min-width: 1450px) {
+  .dropbtn {
+    padding: 0.5rem;
+  }
+}
+
+.fa-caret-down {
+  padding-left: 0.25rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  color: #000;
+  background-color: #939393;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #000;
+  padding: 12px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #0055e6;
+  color: #fff;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 7px 17px;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+@media only screen and (min-width: 400px) and (max-width: 549px),
+  only screen and (min-width: 350px) and (max-width: 399px),
+  only screen and (max-width: 349px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.btn-rounded {
+  border-radius: 3px;
+}
+
+.btn-xl {
+  font-size: 26px;
+  min-height: 40px;
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0 !important;
+  border-left: 1px solid #333;
+  border: 0;
+  border-radius: 2px;
+  align-items: center;
+  margin: 0.25em auto;
+  padding: 0 1em;
+  width: auto;
+  min-height: 60px;
+}
+
+.btn-icon {
+  margin-left: 10px;
+}
+
+/* content hero  */
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 950px;
+  padding: 75px 0;
+  z-index: 2;
+}
+
+.hero-content h2,
+h3 {
+  font-weight: 400;
+  margin: 1rem auto;
+  max-width: 40rem;
+}
+
+.hero-content h2 {
+  padding-bottom: 15px;
+}
+
+.hero-title {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.email-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px),
+  only screen and (min-width: 1450px) {
+  .email-form {
+    max-width: 950px;
+    padding-top: 0.5rem;
+  }
+}
+
+.email-field {
+  vertical-align: top;
+  margin: 0.4rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px),
+  only screen and (min-width: 1450px) {
+  .email-field {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+
+#email {
+  min-width: 450px;
+  height: 60px;
+  font-size: 16px;
+  padding-left: 0.8rem;
+  border: solid 1px #8c8c8c;
+  border-radius: 2px;
+  padding: 0 10px 0;
+}
+
+/* 1st story card */
+
+.story-containers {
+  position: relative;
+  border-bottom: 8px solid #222222;
+  padding: 50px 5%;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px),
+  only screen and (min-width: 950px) and (max-width: 1449px),
+  only screen and (min-width: 1450px) {
+  .story-containers {
+    padding: 70px 45px;
+  }
+}
+
+.card-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.story-card-text {
+  width: 52%;
+  height: 100%;
+  padding: 0 30px 0 0;
+}
+
+.story-card-text h1 {
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  margin: 0 0 0.4em;
+}
+
+.story-card-text h2 {
+  margin: 0.75em 0 0.25em;
+}
+
+.story-card-text,
+.story-card-text-reverse h2 {
+  line-height: 1.3;
+}
+
+.animation-container {
+  width: 48%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tv-frame {
+  position: relative;
+  z-index: 2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.vid {
+  width: 100%;
+  height: 100%;
+  max-width: 73%;
+  max-height: 54%;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.animation-card {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* 2nd story card */
+
+.reverse {
+  flex-flow: row-reverse;
+}
+
+.story-card-text-reverse {
+  width: 52%;
+  height: 100%;
+  padding: 0 0 0 30pxrem;
+}
+
+.story-card-text-reverse h1 {
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.story-card-text-reverse h2 {
+  margin: 0.75em 0 0.25em;
+}
+
+.downloading-animation-container {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+}
+
+.downloading-animation-card-container {
+  margin: -8% 0 -4% -15%;
+  min-height: 100px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.downloading-animation {
+  padding: 0.5em 0.75em;
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  transform: translate(-50%);
+  margin: 0 auto;
+  background: #000;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  min-width: 15em;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 2em #000;
+  border-radius: 0.75em;
+  /* z-index: 1; */
+}
+
+.show-downloaded {
+  margin: 0 1em 0 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.show-downloaded img {
+  height: 3.5em;
+}
+
+.downloading-animation-text {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0.3em 0;
+}
+
+.text-0 {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.text-1 {
+  font-size: 0.9em;
+  color: #0071eb;
+  font-weight: 400;
+}
+
+.downloading-animation::after {
+  height: 3.75em;
+  width: 3em;
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  display: block;
+  background: url(/vid/download-icon.gif) center center no-repeat;
+  background-size: 100%;
+  content: "";
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* 3rd story card */
+
+.vid-2 {
+  width: 100%;
+  height: 100%;
+  max-width: 63%;
+  max-height: 47%;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* faq */
+.faq-card {
+  text-align: center;
+}
+
+.faq-card .faq-list {
+  max-width: 815px;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px),
+  only screen and (min-width: 1450px) {
+  .faq-card .faq-list {
+    width: 75%;
+    margin: 52px auto;
+  }
+}
+
+.faq-card .question {
+  list-style-type: none;
+  margin: 0 0 8px 0;
+}
+
+.faq-title {
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.question-title {
+  padding: 0.8em 2.2em 0.8em 1.2em;
+  margin-bottom: 1px;
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+  width: 100%;
+  border: 0;
+  display: block;
+  text-align: left;
+  background: #303030;
+}
+
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question-btn {
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  right: 1.6rem;
+  font-size: 26px;
+}
+
+.question-text {
+  padding: 1.2em;
+  margin-bottom: 1px;
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+  width: 100%;
+  border: 0;
+  text-align: left;
+  background: #303030;
+  line-height: 1.3;
+}
+
+.question-text a {
+  text-decoration: underline;
+}
+
+/* hide text */
+.question-text {
+  display: none;
+}
+.show-text .question-text {
+  display: block;
+}
+.xmark-icon {
+  display: none;
+}
+.show-text .xmark-icon {
+  display: inline;
+}
+.show-text .plus-icon {
+  display: none;
+}
+
+/* footer */
+
+.footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-bottom: none;
+  padding-bottom: 20px;
+}
+
+.info-cards-footer {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.footer-cols {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.footer h4 {
+  color: #757575;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.footer a,
+p {
+  color: #757575;
+  font-size: 13px;
+}
+
+footer li {
+  padding-bottom: 1rem;
+}
+
+.dropdown-bottom {
+  margin-bottom: 25px;
+  z-index: 3;
+}
+
+.info-cards-footer .dropbtn-bottom {
+  color: #757575;
+  background-color: rgba(000, 0, 0, 0);
+  padding: 8px;
+  font-size: 1rem;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 2px;
+}
+
+.dropdown-content-bottom {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  color: #000;
+  background-color: #939393;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.dropdown-content-bottom a {
+  display: block;
+  color: #000;
+  padding: 12px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-content-bottom a:hover {
+  background-color: #0055e6;
+  color: #fff;
+}
+
+.show {
+  display: block;
+  flex-direction: column;
+}
+
+.footer-country {
+  padding-bottom: 13px;
+}
+
+.btn:hover {
+  background: #f9010d;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 950px) {
+  .hero {
+    height: 100%;
+  }
+
+  .svg-icon-netflix-logo {
+    width: 6.75rem;
+    height: 2rem;
+  }
+  .card-container {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+  .hero h3 {
+    font-size: 23px;
+    padding: 0 10%;
+  }
+
+  #email {
+    min-width: 498px;
+  }
+
+  .email-bottom {
+    margin: 10px 50px;
+  }
+
+  .email-form-title {
+    font-size: 23px;
+    padding: 0 10%;
+    margin: 0 auto;
+  }
+
+  .btn-xl {
+    font-size: 16px;
+    min-height: 40px;
+  }
+
+  .btn-div {
+    margin-top: 14px;
+  }
+
+  .story-card-text,
+  .story-card-text-reverse {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .animation-container,
+  .downloading-animation-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1em;
+  }
+  .downloading-animation-card-container {
+    margin: 0;
+  }
+
+  .question-title,
+  .question-text {
+    font-size: 20px;
+  }
+  .faq-card .faq-list {
+    margin: 30px auto;
+    max-width: 90%;
+    padding: 1.5em auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+  h2,
+  h3 {
+    font-size: 18px;
+  }
+
+  #email {
+    max-height: 46px;
+    min-width: 288px;
+  }
+
+  .btn-xl {
+    font-size: 16px;
+    min-height: 40px;
+  }
+
+  .btn-div {
+    margin-top: 14px;
+  }
+
+  .hero-content {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .hero-content h3 {
+    padding: 0 5%;
+  }
+
+  .info-cards .card-container {
+    flex-direction: column;
+  }
+
+  .story-card-text .story-card-text-reverse {
+    margin: 0;
+  }
+
+  .info-cards .story-card-text {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    padding-bottom: 25px;
+    z-index: 3;
+  }
+  .info-cards .story-card-text-reverse {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    z-index: 3;
+  }
+
+  .info-cards .animation-container {
+    width: 100%;
+    max-width: 600px;
+    margin: -10% 0 0 0;
+  }
+
+  .info-cards .downloading-animation-container {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .downloading-animation-card-container {
+    margin: 0;
+  }
+
+  .downloading-animation img {
+    height: 3em;
+  }
+
+  .text-0 {
+    font-size: 14.4px;
+  }
+
+  .text-1 {
+    font-size: 12px;
+  }
+
+  .kids-programming {
+    margin-top: 38.25px;
+  }
+
+  .faq-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .question-title,
+  .question-text {
+    font-size: 18px;
+  }
+
+  .faq-list {
+    margin: 22.5px 0;
+  }
+
+  .email-form-title {
+    padding: 0 2.4rem;
+  }
+
+  .email-bottom {
+    margin: 0 16px 12px;
+  }
+
+  .footer-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1449px) {
+  .hero-title h1 {
+    font-size: 64px;
+  }
+
+  .btn-xl {
+    font-size: 30px;
+  }
+}
